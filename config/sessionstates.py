@@ -7,8 +7,6 @@ from openai import OpenAI
 import pandas as pd
 from classes import chathistory_class as clsChatHistory
 
-
-
 def initial_session_State():
     if "userflow_complete" not in st.session_state:
         st.session_state.userflow_complete = False
@@ -60,18 +58,16 @@ def initial_session_State():
     if "userflow_stage" not in st.session_state:
         st.session_state.userflow_stage = 0
     if "client" not in st.session_state:
-        st.session_state.client = OpenAI(api_key=st.secrets.openai.apikey)
+        st.session_state.client = None
         st.session_state.openai_model = st.secrets.openai.model_gpt4_preview
     #Assistants
     if "assistant" not in st.session_state:
-        st.session_state.assistant = st.session_state.client.beta.assistants.retrieve(assistant_id=st.secrets.openai.assistantid)
-        st.session_state.assistant_id = st.secrets.openai.assistantid
+        st.session_state.assistant = None
+        st.session_state.assistant_id = None
     #Threads
     if "thread" not in st.session_state:
-        st.session_state.thread = st.session_state.client.beta.threads.create(metadata={'session_id': st.session_state.usersession_id,})
-        st.session_state.thread_id = st.session_state.thread.id   
-        
-
+        st.session_state.thread = None
+        st.session_state.thread_id = None  
     #Messages
     if "chatmessages" not in st.session_state:
         st.session_state.chatmessages = [{"role": "assistant", "content": st.secrets.messageconfig.initialmessage3_daddy}]
@@ -93,35 +89,20 @@ def initial_session_State():
         st.session_state.run_id = None
         st.session_state.run_status = None
         st.session_state.run_instructions = "Ensure you review all your instructions and documents you have been provided. Ensure you follow the process. Ensure you perform your simulations. Ensure you return the types of bets being requested."
-
     if "openai_client" not in st.session_state:
         st.session_state.openai_client = OpenAI(api_key=st.secrets.openai.api_key)
         st.session_state.openai_model = st.secrets.openai.model_gpt4_preview
-    
-    if "thread" not in st.session_state:
-        st.session_state.thread = st.session_state.openai_client.beta.threads.create(
-            metadata={'session_id': st.session_state.session_id,}
-        )
-        st.session_state.thread_id = st.session_state.thread.id
     if "start_chat" not in st.session_state:
         st.session_state.start_chat = True
     if "start_manage" not in st.session_state:
         st.session_state.start_manage = False
     if "messages" not in st.session_state:
-        st.session_state.initial_message = {"role": "assistant", "content": f"Daddy is here! Ask away and watch Daddy cook!", "messageid": "0", "runid": "0", "createdatunix": st.session_state.usersession_unixtime, "createdatdatetime": st.session_state.usersession_datetime}
-        st.session_state.messages = [st.session_state.initial_message]
+        st.session_state.initial_message = None
+        st.session_state.messages = None
     if "retry_error" not in st.session_state:
         st.session_state.retry_error = 0
-    if "dataframe_messages" not in st.session_state:
-        st.session_state.dataframe_messages = pd.DataFrame(columns=["Role", "Content", "Thread Id", "Message Id", "Run Id", "Session Id", "Created At Unix", "Created At Datetime"])
-    if "new_row_messages" not in st.session_state:
-        st.session_state.new_row_messages = {"Role": None, "Content": None, "Thread Id": None, "Message Id": None, "Run Id": None, "Session Id": None, "Created At Unix": None, "Created At Datetime": None}
-    if "input_object" not in st.session_state:
-        st.session_state.input_object = {"Sport": None, "BetTypes": None, "UserPrompt": None, "AdditionalInstructions": None}   
-
     if "data_loaded" not in st.session_state:
         st.session_state.data_loaded=False
-
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = clsChatHistory.ChatHistory()
       
