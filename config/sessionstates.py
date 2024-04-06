@@ -5,6 +5,7 @@ import time
 import json
 from openai import OpenAI
 import pandas as pd
+from classes import chathistory_class as clsChatHistory
 
 
 
@@ -120,3 +121,7 @@ def initial_session_State():
 
     if "data_loaded" not in st.session_state:
         st.session_state.data_loaded=False
+
+    if "chat_history" not in st.session_state:
+        st.session_state.chat_history = clsChatHistory.ChatHistory()
+      

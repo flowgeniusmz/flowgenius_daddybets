@@ -115,6 +115,23 @@ def get_component_pagelink_styled(varPageNumber: int):
                 if navigate_button:
                     st.switch_page(page=path)
 
+def get_component_pagelink_styled_popover(varPageNumber: int):
+    subtitle = get_pageconfig_item(varPageNumber=varPageNumber, varPageConfigType="subtitles")
+    icon = get_pageconfig_item(varPageNumber=varPageNumber, varPageConfigType="icons")
+    path = get_pageconfig_item(varPageNumber=varPageNumber, varPageConfigType="paths")
+    about = get_pageconfig_item(varPageNumber=varPageNumber, varPageConfigType="abouts")
+    #page_link_container = st.container(border=False)
+    container = container_styled2(varKey=f"dfsd_{varPageNumber}")
+    with container:
+        #pagelink = st.page_link(page=path, label=subtitle, icon=None, use_container_width=True)
+        container1 = container_styled3(varKey=f"dsa_{varPageNumber}")
+        with container1:
+            pagelink = st.page_link(page=path, label=subtitle, icon=None, use_container_width=True)
+            pop = st.popover(label="About", disabled=False, use_container_width=True)
+            with pop:
+                st.markdown(about)
+
+
 def get_component_pagelinksection():
     link_container = st.container(border=False)
     with link_container:
@@ -137,6 +154,16 @@ def get_component_pagelinksection_styled():
             get_component_pagelink_styled(2)
             get_component_pagelink_styled(4)
 
+def get_component_pagelinksection_styled_popover():
+    link_container = st.container(border=False)
+    with link_container:
+        link_columns_row1 = st.columns([1,20,20,1])
+        with link_columns_row1[1]:
+            get_component_pagelink_styled_popover(1)
+            get_component_pagelink_styled_popover(3)
+        with link_columns_row1[2]:
+            get_component_pagelink_styled_popover(2)
+            get_component_pagelink_styled_popover(4)
 
         
 
@@ -275,6 +302,16 @@ def master_page_display_styled_popmenu(varPageNumber: int):
     get_component_overview(varPageNumber=varPageNumber)
     if varPageNumber == 0:
         get_component_pagelinksection_styled()
+
+def master_page_display_styled_popmenu_pop(varPageNumber: int):
+    display_background_image()
+    get_page_styling()
+    #create_sidebar_nav(varPageNumber=varPageNumber)
+    get_pageconfig_title_with_popmenu(varPageNumber=varPageNumber)
+    #get_pageconfig_title_with_home_link(varPageNumber=varPageNumber)
+    get_component_overview(varPageNumber=varPageNumber)
+    if varPageNumber == 0:
+        get_component_pagelinksection_styled_popover()
 
 def master_userflow_display():
     display_background_image2()

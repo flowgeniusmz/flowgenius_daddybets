@@ -14,4 +14,8 @@ def callback_usertypeform():
 def UserTypeForm():
     usertypeform_container = ps.container_styled2(varKey="usertype") #st.container(border=True)
     with usertypeform_container:
-        select_usertype = st.radio(label="Select New or Existing User", key="selected_usertype", options=st.session_state.usertypes, index=None, on_change=callback_usertypeform, horizontal=True)
+        selectcontainer = ps.container_styled3(varKey="selcont")
+        with selectcontainer:
+            usertypecols = st.columns([1,50,1])
+            with usertypecols[1]:
+                select_usertype = st.radio(label="Select New or Existing User", key="selected_usertype", options=st.session_state.usertypes, index=None, on_change=callback_usertypeform, horizontal=True)
