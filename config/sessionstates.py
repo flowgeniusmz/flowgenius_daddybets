@@ -105,4 +105,5 @@ def initial_session_State():
         st.session_state.data_loaded=False
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = clsChatHistory.ChatHistory()
-      
+    if "initialized" not in st.session_state:
+        st.session_state.intialized = True
