@@ -55,8 +55,10 @@ class BettingAssistant():
         simulatedstatus = st.status(label="Simulating...", expanded=False, state="running")
         st.toast("Simulating...", icon="⏳")
         while self.run_status != "completed":
-            with simulatedstatus:
-                st.markdown("Simulating...please wait")
+            simulatedstatus.update(label="Simulating", expanded=False, state="running")
+            st.toast("Simulating...", icon="⏳")
+            #with simulatedstatus:
+                #st.markdown("Simulating...please wait")
             time.sleep(1)
             self.retrieve_run()
             if self.run_status == "completed":
