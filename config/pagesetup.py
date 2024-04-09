@@ -121,6 +121,7 @@ def get_component_pagelink_styled_popover(varPageNumber: int):
     path = get_pageconfig_item(varPageNumber=varPageNumber, varPageConfigType="paths")
     about = get_pageconfig_item(varPageNumber=varPageNumber, varPageConfigType="abouts")
     #page_link_container = st.container(border=False)
+    #container = container_styled2A(key=f"dafdaadfa_{varPageNumber}")
     container = container_styled2(varKey=f"dfsd_{varPageNumber}")
     with container:
         #pagelink = st.page_link(page=path, label=subtitle, icon=None, use_container_width=True)
@@ -380,6 +381,56 @@ def container_styled3(varKey):
 
 
     return styledcontainer
+
+
+def container_styled_3a(key, border=False, height=None):
+    styledcontainer = sc(
+        key=key,
+        css_styles="""
+        {
+            border: 2px solid rgba(0, 0, 0, 0.2); /* Changed border color to a subtle grey */
+            background-color: rgba(255, 255, 255, 0.75); /* Adjusted transparency for better visibility */
+            border-radius: 0.5rem;
+            padding: 1em; /* Added padding for better spacing */
+            overflow: hidden; /* Keeps the content within the borders */
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Soft shadow for a 3D effect */
+            transition: 0.3s; /* Smooth transition for hover effects */
+            box-sizing: border-box;
+        }
+        """
+    )
+    with styledcontainer:
+        if height is not None:
+            container = st.container(border=border, height=height)
+        else:
+            container = st.container(border=border)
+        return container
+
+def container_styled2A(key, border=False, height=None):
+    styledcontainer = sc(
+        key=key,
+        css_styles="""
+        {
+            border: 2px solid rgba(0, 0, 0, 0.2); /* Changed border color to a subtle grey */
+            background-color: rgba(40, 94, 159, 0.75); /* Adjusted transparency for better visibility */
+            border-radius: 0.5rem;
+            padding: 1em; /* Added padding for better spacing */
+            overflow: hidden; /* Keeps the content within the borders */
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Soft shadow for a 3D effect */
+            transition: 0.3s; /* Smooth transition for hover effects */
+            box-sizing: border-box;
+        }
+        """
+    )
+    with styledcontainer:
+        if height is not None:
+            container = st.container(border=border, height=height)
+        else:
+            container = st.container(border=border)
+        return container
+
+
+
 
 def styledexpander(varkey):
     sc = container_styled3(varKey=varkey)

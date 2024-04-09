@@ -94,7 +94,7 @@ class ChatHistory():
 
     def get_chat_history_display_success(self):
         df_log_messages = pd.DataFrame(self.log_messages)
-        df_log_messages_filtered = df_log_messages[df_log_messages['run_id'] != "10"]
+        df_log_messages_filtered = df_log_messages[df_log_messages['run_id'] != "0"]
         df_log_messages_grouped = df_log_messages_filtered.groupby('run_id')
         for run_id, group in df_log_messages_grouped:
             user_msgs = group[group['role'] == 'user']['content']

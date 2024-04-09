@@ -1,0 +1,150 @@
+{
+    "variables_matchup": {
+        "cfb": [
+            {"variableName": "HeadToHeadWinLossRecord", "variableDesc": "Historical win/loss record between the two football teams."},
+            {"variableName": "QuarterbackRatingInMatchups", "variableDesc": "Efficiency rating of the starting quarterbacks in matchups against each other."},
+            {"variableName": "DefenseYardsAllowedPerGameInMatchups", "variableDesc": "Yards allowed on average by the defense in matchups."},
+            {"variableName": "RushingYardsDifferentialInMatchups", "variableDesc": "Differential in rushing yards between the teams in past games."},
+            {"variableName": "SpecialTeamsScoreInMatchups", "variableDesc": "Performance rating of special teams units in previous encounters."},
+            {"variableName": "TurnoverMarginInMatchups", "variableDesc": "Difference in turnovers gained vs. turnovers lost in matchups."},
+            {"variableName": "CoachHeadToHeadRecord", "variableDesc": "Record of the current head coaches against each other."},
+            {"variableName": "RivalryIntensity", "variableDesc": "The intensity of the rivalry, which can have a significant impact on performance and strategy."},
+            {"variableName": "RecruitmentClassImpact", "variableDesc": "The impact of recent recruitment classes, especially top recruits, in key matchups."},
+            {"variableName": "HomeFieldAdvantageEffect", "variableDesc": "The impact of playing at home, considering historical performance in such settings."}
+        ],
+        "cbb": [
+            {"variableName": "HeadToHeadWinLossRecord", "variableDesc": "Historical win/loss record between the two teams."},
+            {"variableName": "StarPlayerMatchup", "variableDesc": "Comparison of the performance of each team's star player in matchups."},
+            {"variableName": "BenchPointsPerGameInMatchups", "variableDesc": "Average bench points in games against each other."},
+            {"variableName": "ThreePointAccuracyInMatchups", "variableDesc": "Head-to-head three-point shooting accuracy."},
+            {"variableName": "TurnoverDifferentialInMatchups", "variableDesc": "Average turnover differential in previous encounters."},
+            {"variableName": "ReboundMarginInMatchup", "variableDesc": "Difference in rebounds between teams in past games."},
+            {"variableName": "FreeThrowPercentageInMatchups", "variableDesc": "Free throw accuracy in games against each other."},
+            {"variableName": "CoachHeadToHeadRecord", "variableDesc": "Head-to-head record of the current coaches."},
+            {"variableName": "RivalryIntensity", "variableDesc": "The historical and emotional intensity of the rivalry."},
+            {"variableName": "StudentSectionImpact", "variableDesc": "The influence of the home crowd, particularly the student section, in previous matchups."}
+        ],
+        "nfl": [
+            {"variableName": "HeadToHeadWinLossRecord", "variableDesc": "Historical win/loss record between the two teams."},
+            {"variableName": "QuarterbackHeadToHeadRating", "variableDesc": "Comparison of the starting quarterbacks' efficiency ratings in matchups against each other."},
+            {"variableName": "DefensiveMatchupEffectiveness", "variableDesc": "Team's defense effectiveness against the opponent's offensive style."},
+            {"variableName": "TurnoversPerMatchup", "variableDesc": "Average turnovers per game in previous matchups."},
+            {"variableName": "InjuryImpacts", "variableDesc": "Impact of current injuries specific to the matchup dynamics."},
+            {"variableName": "SpecialTeamsHeadToHeadPerformance", "variableDesc": "Comparison of the special teams' performances in previous encounters."},
+            {"variableName": "WeatherImpact", "variableDesc": "Specific weather conditions' effect on each team's playing style."},
+            {"variableName": "HomeAdvantageEffectiveness", "variableDesc": "Historical effectiveness of home advantage in this matchup."},
+            {"variableName": "CoachingStrategyEffectiveness", "variableDesc": "Historical effectiveness of the coaching staff's strategies against each other."},
+            {"variableName": "RecentFormAgainstSimilarOpponents", "variableDesc": "Performance trend of each team against similar opponents."}
+        ],
+        "mlb": [
+            {"variableName": "PitcherVsBatterStats", "variableDesc": "Head-to-head statistics between pitchers and the opposing batters."},
+            {"variableName": "BullpenEffectivenessInMatchup", "variableDesc": "Bullpen's effectiveness in previous matchups against the opposing team."},
+            {"variableName": "FieldingErrorsInMatchups", "variableDesc": "Historical fielding errors in matchups."},
+            {"variableName": "HomeRunComparison", "variableDesc": "Head-to-head home run comparison in previous games."},
+            {"variableName": "StealingBasesSuccessRate", "variableDesc": "Success rate of stealing bases in matchups."},
+            {"variableName": "InningScoringPatterns", "variableDesc": "Scoring patterns by inning in past matchups."},
+            {"variableName": "UmpireEffect", "variableDesc": "The effect of the umpire's style on past matchups."},
+            {"variableName": "WeatherConditionsImpact", "variableDesc": "Specific impact of weather conditions on previous matchups."},
+            {"variableName": "TeamFatigueLevels", "variableDesc": "Impact of schedule and travel on team performance."},
+            {"variableName": "DayNightPerformance", "variableDesc": "Teams' performance in day vs. night games in the matchup context."}
+        ],
+        "nhl": [
+            {"variableName": "GoalieHeadToHeadPerformance", "variableDesc": "Head-to-head performance of the goalies in past matchups."},
+            {"variableName": "PowerPlayVsPenaltyKillPerformance", "variableDesc": "Comparison of power play vs. penalty kill performance in matchups."},
+            {"variableName": "ShotsOnGoalDifferential", "variableDesc": "Differential in shots on goal in previous encounters."},
+            {"variableName": "PhysicalityLevel", "variableDesc": "Level of physical play (hits, penalties) in past matchups."},
+            {"variableName": "OvertimeShootoutHistory", "variableDesc": "Teams' performance in overtime/shootouts in matchups."},
+            {"variableName": "LeadChanges", "variableDesc": "Number of lead changes in previous games."},
+            {"variableName": "InjuryImpactOnMatchup", "variableDesc": "Specific injuries' impact based on past encounters."},
+            {"variableName": "FaceOffDominance", "variableDesc": "Dominance in face-offs in past matchups."},
+            {"variableName": "ScoringEfficiency", "variableDesc": "Teams' scoring efficiency in previous encounters."},
+            {"variableName": "GoalDifferential", "variableDesc": "Goal differential in past matchups."}
+        ],
+        "nba": [
+            {"variableName": "PlayerMatchupsEfficiency", "variableDesc": "Individual player matchups' efficiency ratings, focusing on key duels."},
+            {"variableName": "BenchImpactOnMatchup", "variableDesc": "Bench players' impact in previous matchups."},
+            {"variableName": "ThreePointShootingMatchup", "variableDesc": "Head-to-head three-point shooting performance."},
+            {"variableName": "ReboundsInMatchup", "variableDesc": "Rebounding performance in previous encounters."},
+            {"variableName": "AssistToTurnoverRatioInMatchup", "variableDesc": "Assist-to-turnover ratio specific to the matchups."},
+            {"variableName": "StarPlayerPerformanceInMatchup", "variableDesc": "Star players' performance trends in previous matchups."},
+            {"variableName": "FatigueFactor", "variableDesc": "Teams' fatigue level based on recent schedule density."},
+            {"variableName": "CoachingAdjustmentsEffectiveness", "variableDesc": "Effectiveness of coaching adjustments in past matchups."},
+            {"variableName": "InGameInjuryImpact", "variableDesc": "Potential impact of in-game injuries based on past occurrences."},
+            {"variableName": "DefensivePressureEffectiveness", "variableDesc": "Effectiveness of each team's defensive pressure in past matchups."}
+        ]   
+    },
+    "variables_general": {
+        "cbb": [
+            {"variableName": "HomeTeamPoints", "variableDesc": "Points scored by the home team."},
+            {"variableName": "AwayTeamPoints", "variableDesc": "Points scored by the away team."},
+            {"variableName": "Spread", "variableDesc": "The betting line or point spread."},
+            {"variableName": "OverUnderPoints", "variableDesc": "The line for over/under points bet."},
+            {"variableName": "StarPlayerStats", "variableDesc": "Key statistics of the team's star player(s)."},
+            {"variableName": "TeamFreeThrowPercentage", "variableDesc": "Free throw shooting percentage."},
+            {"variableName": "ThreePointShootingPercentage", "variableDesc": "Team's 3-point shooting efficiency."},
+            {"variableName": "ReboundMargin", "variableDesc": "Difference in rebounds gained vs. lost."},
+            {"variableName": "AssistsPerGame", "variableDesc": "Average number of assists per game."},
+            {"variableName": "TurnoversPerGame", "variableDesc": "Average number of turnovers per game."}
+        ],
+        "cfb": [
+            {"variableName": "HomeTeamScore", "variableDesc": "Points scored by the home team."},
+            {"variableName": "AwayTeamScore", "variableDesc": "Points scored by the away team."},
+            {"variableName": "PointSpread", "variableDesc": "The betting line for the point spread."},
+            {"variableName": "OverUnderLine", "variableDesc": "The total points line for the over/under bet."},
+            {"variableName": "QuarterbackStats", "variableDesc": "Key statistics of the starting quarterback."},
+            {"variableName": "RushingYards", "variableDesc": "Team's rushing yards."},
+            {"variableName": "PassingYards", "variableDesc": "Team's passing yards."},
+            {"variableName": "DefenseYardsAllowed", "variableDesc": "Yards allowed by the team's defense."},
+            {"variableName": "SpecialTeamsScore", "variableDesc": "Performance rating of special teams units."},
+            {"variableName": "TurnoverMargin", "variableDesc": "Difference in turnovers gained vs. turnovers lost."}
+        ], 
+        "nfl": [
+            {"variableName": "HomeTeamScore", "variableDesc": "Points scored by the home team."},
+            {"variableName": "AwayTeamScore", "variableDesc": "Points scored by the away team."},
+            {"variableName": "Spread", "variableDesc": "The betting line or point spread."},
+            {"variableName": "OverUnderLine", "variableDesc": "The total points line for the over/under bet."},
+            {"variableName": "QuarterbackRating", "variableDesc": "Efficiency rating of the starting quarterback."},
+            {"variableName": "DefenseRank", "variableDesc": "Ranking of the team’s defense based on yards allowed."},
+            {"variableName": "TurnoverMargin", "variableDesc": "Difference in turnovers gained vs. turnovers lost."},
+            {"variableName": "InjuryReportScore", "variableDesc": "A composite score reflecting the impact of injuries."},
+            {"variableName": "WeatherConditions", "variableDesc": "Including temperature, wind, and precipitation."},
+            {"variableName": "RecentForm", "variableDesc": "Performance trend over the last 5 games."}
+        ],
+        "nhl": [
+            {"variableName": "HomeTeamGoals", "variableDesc": "Goals scored by the home team."},
+            {"variableName": "AwayTeamGoals", "variableDesc": "Goals scored by the away team."},
+            {"variableName": "PuckLine", "variableDesc": "The betting line for the puck spread."},
+            {"variableName": "OverUnderGoals", "variableDesc": "The line for over/under goals bet."},
+            {"variableName": "GoalieSavePercentage", "variableDesc": "Save percentage of the starting goalie."},
+            {"variableName": "PowerPlayPercentage", "variableDesc": "Team's power play efficiency."},
+            {"variableName": "PenaltyKillPercentage", "variableDesc": "Team's penalty kill efficiency."},
+            {"variableName": "ShotsOnGoal", "variableDesc": "Number of shots on goal."},
+            {"variableName": "FaceOffWinPercentage", "variableDesc": "Percentage of face-offs won."},
+            {"variableName": "RecentGoalDifferential", "variableDesc": "Goal differential over the last 5 games."}
+        ],
+        "nba": [
+            {"variableName": "HomeTeamPoints", "variableDesc": "Points scored by the home team."},
+            {"variableName": "AwayTeamPoints", "variableDesc": "Points scored by the away team."},
+            {"variableName": "PointSpread", "variableDesc": "The betting line for the point spread."},
+            {"variableName": "OverUnderPoints", "variableDesc": "The line for over/under points bet."},
+            {"variableName": "StarPlayerPerformance", "variableDesc": "Performance rating of the team's star player."},
+            {"variableName": "BenchStrength", "variableDesc": "Efficiency rating of the bench players."},
+            {"variableName": "ReboundsPerGame", "variableDesc": "Average rebounds per game."},
+            {"variableName": "AssistsTurnoverRatio", "variableDesc": "Ratio of assists to turnovers."},
+            {"variableName": "FieldGoalPercentage", "variableDesc": "Overall shooting efficiency."},
+            {"variableName": "RecentWinLossRecord", "variableDesc": "Win/loss trend over the last 5 games."}
+        ], 
+        "mlb": [
+            {"variableName": "HomeRuns", "variableDesc": "Home runs scored by the team."},
+            {"variableName": "PitcherERA", "variableDesc": "Earned Run Average of the starting pitcher."},
+            {"variableName": "Strikeouts", "variableDesc": "Number of strikeouts by the team's pitchers."},
+            {"variableName": "RunLine", "variableDesc": "The run line for betting (similar to point spread)."},
+            {"variableName": "OverUnderRuns", "variableDesc": "The line for over/under runs bet."},
+            {"variableName": "BattingAverage", "variableDesc": "Team's batting average."},
+            {"variableName": "BullpenERA", "variableDesc": "Earned Run Average of the bullpen."},
+            {"variableName": "FieldingErrors", "variableDesc": "Number of fielding errors."},
+            {"variableName": "BaseOnBalls", "variableDesc": "Number of walks (both given and received)."},
+            {"variableName": "RecentScoringPerformance", "variableDesc": "Runs scored in the last 5 games."}
+        ]
+    }
+}

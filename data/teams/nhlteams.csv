@@ -1,0 +1,33 @@
+,teamId,teamIdsByProvider,sportId,shortCode,market,marketAbbr,name,nameShort,active,competitorType,primaryColor
+0,1580,"{'6': '4416ba1a-0f24-11e2-8525-18a905767e44', '15': '35701'}",3,BOS,Boston,BOS,Bruins,Bruins,True,Team,
+1,1579,"{'6': '4418464d-0f24-11e2-8525-18a905767e44', '15': '35733'}",3,FLA,Florida,FLA,Panthers,Panthers,True,Team,#0E5CA0
+2,1593,"{'6': '441730a9-0f24-11e2-8525-18a905767e44', '15': '35786'}",3,TOR,Toronto,TOR,Maple Leafs,Maple Leafs,True,Team,
+3,1577,"{'6': '4417d3cb-0f24-11e2-8525-18a905767e44', '15': '35783'}",3,TB,Tampa Bay,TB,Lightning,Lightning,True,Team,
+4,1576,"{'6': '44169bb9-0f24-11e2-8525-18a905767e44', '15': '35727'}",3,DET,Detroit,DET,Red Wings,Red Wings,True,Team,
+5,1581,"{'6': '4416d559-0f24-11e2-8525-18a905767e44', '15': '35705'}",3,BUF,Buffalo,BUF,Sabres,Sabres,True,Team,#6EABD8
+6,1591,"{'6': '4416f5e2-0f24-11e2-8525-18a905767e44', '15': '35768'}",3,OTT,Ottawa,OTT,Senators,Senators,True,Team,
+7,1592,"{'6': '441713b7-0f24-11e2-8525-18a905767e44', '15': '35742'}",3,MTL,Montreal,MTL,Canadiens,Canadiens,True,Team,
+8,1584,"{'6': '441781b9-0f24-11e2-8525-18a905767e44', '15': '35754'}",3,NYR,New York,NY,Rangers,Rangers,True,Team,
+9,1578,"{'6': '44182a9d-0f24-11e2-8525-18a905767e44', '15': '35712'}",3,CAR,Carolina,CAR,Hurricanes,Hurricanes,True,Team,
+10,1585,"{'6': '44179d47-0f24-11e2-8525-18a905767e44', '15': '35773'}",3,PHI,Philadelphia,PHI,Flyers,Flyers,True,Team,
+11,1587,"{'6': '4417eede-0f24-11e2-8525-18a905767e44', '15': '35795'}",3,WSH,Washington,WSH,Capitals,Capitals,True,Team,
+12,1583,"{'6': '441766b9-0f24-11e2-8525-18a905767e44', '15': '35751'}",3,NYI,New York,NY,Islanders,Islanders,True,Team,
+13,1586,"{'6': '4417b7d7-0f24-11e2-8525-18a905767e44', '15': '35775'}",3,PIT,Pittsburgh,PIT,Penguins,Penguins,True,Team,#1F2637
+14,1582,"{'6': '44174b0c-0f24-11e2-8525-18a905767e44', '15': '35748'}",3,NJ,New Jersey,NJ,Devils,Devils,True,Team,
+15,1575,"{'6': '44167db4-0f24-11e2-8525-18a905767e44', '15': '35721'}",3,CBJ,Columbus,CBJ,Blue Jackets,Blue Jackets,True,Team,
+16,1572,"{'6': '44157522-0f24-11e2-8525-18a905767e44', '15': '35724'}",3,DAL,Dallas,DAL,Stars,Stars,True,Team,
+17,1568,"{'6': '4415ce44-0f24-11e2-8525-18a905767e44', '15': '35718'}",3,COL,Colorado,COL,Avalanche,Avalanche,True,Team,#0F0F0F
+18,1594,"{'6': '44180e55-0f24-11e2-8525-18a905767e44', '15': '35797'}",3,WPG,Winnipeg,WPG,Jets,Jets,True,Team,
+19,1574,"{'6': '441643b7-0f24-11e2-8525-18a905767e44', '15': '35745'}",3,NSH,Nashville,NSH,Predators,Predators,True,Team,
+20,1570,"{'6': '441660ea-0f24-11e2-8525-18a905767e44', '15': '35781'}",3,STL,St. Louis,STL,Blues,Blues,True,Team,
+21,1569,"{'6': '4416091c-0f24-11e2-8525-18a905767e44', '15': '35739'}",3,MIN,Minnesota,MIN,Wild,Wild,True,Team,#862334
+22,1566,"{'6': '44153da1-0f24-11e2-8525-18a905767e44', '15': '35699'}",3,ARI,Arizona,ARI,Coyotes,Coyotes,True,Team,#162C52
+23,1573,"{'6': '4416272f-0f24-11e2-8525-18a905767e44', '15': '35715'}",3,CHI,Chicago,CHI,Blackhawks,Blackhawks,True,Team,
+24,1589,"{'6': '4415b0a7-0f24-11e2-8525-18a905767e44', '15': '35789'}",3,VAN,Vancouver,VAN,Canucks,Canucks,True,Team,#000000
+25,1590,"{'6': '4415ea6c-0f24-11e2-8525-18a905767e44', '15': '35730'}",3,EDM,Edmonton,EDM,Oilers,Oilers,True,Team,
+26,1564,"{'6': '42376e1c-6da8-461e-9443-cfcf0a9fcc4d', '15': '35792'}",3,VGK,Vegas,VGS,Golden Knights,Golden Knights,True,Team,
+27,1565,"{'6': '44151f7a-0f24-11e2-8525-18a905767e44', '15': '35736'}",3,LA,Los Angeles,LA,Kings,Kings,True,Team,
+28,3027,"{'6': '1fb48e65-9688-4084-8868-02173525c3e1', '15': '583254'}",3,SEA,Seattle,SEA,Kraken,Kraken,True,Team,
+29,1588,"{'6': '44159241-0f24-11e2-8525-18a905767e44', '15': '35709'}",3,CGY,Calgary,CGY,Flames,Flames,True,Team,
+30,1571,"{'6': '441862de-0f24-11e2-8525-18a905767e44', '15': '35695'}",3,ANA,Anaheim,ANA,Ducks,Ducks,True,Team,
+31,1567,"{'6': '44155909-0f24-11e2-8525-18a905767e44', '15': '35778'}",3,SJ,San Jose,SJ,Sharks,Sharks,True,Team,
