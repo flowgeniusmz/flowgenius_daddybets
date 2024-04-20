@@ -91,7 +91,7 @@ def NewUserForm():
                 name = session.customer_details.name
                 username = st.text_input(label="Username", value=st.query_params.username, key="_username")
 
-                credential = st.text_input(label="Password", key="_credential", value=st.query_params.credential, type="password")
+                credential = st.text_input(label="Password", key="_credential", type="password")
                 create = st.button(label="Create Account", key="createaccount", on_click=callback_newuserform, args=[username, credential], type="primary")
             else:
                 username = st.text_input(label="Username", key="username")
