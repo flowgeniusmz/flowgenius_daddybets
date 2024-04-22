@@ -4,12 +4,12 @@ import time
 import json
 from tavily import TavilyClient
 from classes.status_class import initialize_status
-from classes.research_class import Research
-
+from classes.research_class1 import Research
+import asyncio
 
 
 def tavily_search(query):
-    search_results = TavilyClient(api_key=st.secrets.tavily.apikey).get_search_context(query=query, search_depth="advanced", max_tokens=8000)
+    search_results = TavilyClient(api_key=st.secrets.tavily.api_key).get_search_context(query=query, search_depth="advanced", max_tokens=8000)
     return search_results
 
 class BettingAssistant():
@@ -32,7 +32,7 @@ class BettingAssistant():
         self.user_message_content = prompt
         #self.add_and_display_message(type="user")
         self.display_message(type="user")
-        self.get_research(user_prompt=prompt)
+        asyncio.run(self.get_research(user_prompt=prompt))
         #self.format_base_prompt(user_request=prompt, research=self.research)
         self.message = self.client.beta.threads.messages.create(thread_id=self.thread_id, role="user", content=self.formatted_prompt, file_ids=file_ids)
         self.message_id = self.message.id
@@ -184,14 +184,23 @@ class BettingAssistant():
         Queries: {queries}"""
         self.completion_response_prompt = self.completion_response_prompt_base.format(sportobject = self.completion_response_sportsobject, teamobject = self.completion_response_teamobject, queries = self.completion_response_queries)
 
-    def get_research(self, user_prompt):
+    
+    
+    async def get_research(self, user_prompt):
         researchstatus = st.status(label="Performing research...", expanded=False, state="running")
         st.toast(body="Performing research...", icon="⏳")
-        self.research = Research(user_input=user_prompt).get_assistant_research()
-        self.format_base_prompt(user_request=user_prompt, research=self.research)
+        research_instance = Research(user_input=user_prompt)
+        df_results_with_summaries = await research_instance.get_assistant_research()
+        research_text = self.format_research_summary(df_results_with_summaries)
+        self.format_base_prompt(user_request=user_prompt, research=research_text)
         with researchstatus:
             st.markdown(self.formatted_prompt)
         researchstatus.update(label="Research complete!", expanded=False, state="complete")
+    
+    def format_research_summary(self, df_results):
+        # Convert DataFrame to a single string summary, ensuring full information is passed
+        summary_text = "\n".join(f"{idx}. {row['summary']}" for idx, row in df_results.iterrows())
+        return summary_text
         
 
     def set_base_prompt(self):
