@@ -43,7 +43,7 @@ class Research:
         self.queries1 = {}
         self.results = []
         self.queries = []
-        self.topic_names = [ResearchTopic.INJURY_REPORT, ResearchTopic.NEWS, ResearchTopic.HEAD_TO_HEAD_STATISTICS]
+        self.topic_names = [ResearchTopic.INJURY_REPORT, ResearchTopic.NEWS, ResearchTopic.HEAD_TO_HEAD_STATISTICS, ResearchTopic.TEAM_PERFORMANCE_TRENDS, ResearchTopic.SPREADS, ResearchTopic.PREDICTIONS]
         self.model = "gpt-3.5-turbo"
         self.research = []
         self.summaries = []
@@ -97,11 +97,12 @@ class Research:
         for topic, query in self.queries1.items():
             print(f"{topic}: {query}")
 
-# Example Usage:
-#research = Research()
+#Example Usage:
+
 #user_input = "NBA"  # Example user input
-#a = research.generate_research(user_input=user_input)
-#print(research.research)
+#research = Research(user_input=user_input)
+#a = research.generate_research()
+#print(a)
 
 
 ### OLD
