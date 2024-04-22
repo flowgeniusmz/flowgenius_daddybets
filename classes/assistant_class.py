@@ -184,8 +184,20 @@ class BettingAssistant():
         Queries: {queries}"""
         self.completion_response_prompt = self.completion_response_prompt_base.format(sportobject = self.completion_response_sportsobject, teamobject = self.completion_response_teamobject, queries = self.completion_response_queries)
 
-    
-    
+    def format_research_summary(self, df_results):
+        # Create an array of dictionaries for each query result and summary.
+        results_list = [
+            {"query": row['query'], "result": {"content": row['content'], "summary": row['summary']}}
+            for idx, row in df_results.iterrows()
+        ]
+        # Convert the list of dictionaries into a JSON string
+        summary_text = json.dumps(results_list, indent=4)
+        return summary_text
+
+    def format_base_prompt(self, user_request, research):
+        self.base_prompt = """Its time to shine, Daddy! The user's request and corresponding research are provided below. Ensure you respond directly to the user. Make sure you respond in Daddy fashion with that witt, humor, and smug attitude. Ensure you always recommend bets to take. Never refer to any files or information to the user.\nUser Request: {user_request}\nResearch:\n{research}"""
+        self.formatted_prompt = self.base_prompt.format(user_request=user_request, research=research)
+
     async def get_research(self, user_prompt):
         researchstatus = st.status(label="Performing research...", expanded=False, state="running")
         st.toast(body="Performing research...", icon="⏳")
@@ -196,17 +208,9 @@ class BettingAssistant():
         with researchstatus:
             st.markdown(self.formatted_prompt)
         researchstatus.update(label="Research complete!", expanded=False, state="complete")
-    
-    def format_research_summary(self, df_results):
-        # Convert DataFrame to a single string summary, ensuring full information is passed
-        summary_text = "\n".join(f"{idx}. {row['summary']}" for idx, row in df_results.iterrows())
-        return summary_text
-        
 
     def set_base_prompt(self):
         self.base_prompt = """Its time to shine, Daddy! The user's request and corresponding research are provided below. Ensure you respond directly to the user.
         User Request: {user_request}
         Research: {research}"""
-    
-    def format_base_prompt(self, user_request, research):
-        self.formatted_prompt = self.base_prompt.format(user_request=user_request, research=research)
+      
