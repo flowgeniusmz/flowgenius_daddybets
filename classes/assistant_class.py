@@ -28,13 +28,13 @@ class BettingAssistant():
         self.thread = self.client.beta.threads.create()
         self.thread_id = self.thread.id
         
-    def create_message(self, prompt, file_ids=None):
+    def create_message(self, prompt):
         self.user_message_content = prompt
         #self.add_and_display_message(type="user")
         self.display_message(type="user")
         asyncio.run(self.get_research(user_prompt=prompt))
         #self.format_base_prompt(user_request=prompt, research=self.research)
-        self.message = self.client.beta.threads.messages.create(thread_id=self.thread_id, role="user", content=self.formatted_prompt, file_ids=file_ids)
+        self.message = self.client.beta.threads.messages.create(thread_id=self.thread_id, role="user", content=self.formatted_prompt)
         self.message_id = self.message.id
         self.user_message_id = self.message_id
         #self.add_message_to_chat_history(type="user")
@@ -131,7 +131,7 @@ class BettingAssistant():
     def run_assistant(self, prompt, file_ids=None):
         #self.get_research(user_prompt=prompt)
         #self.format_base_prompt(user_request=prompt, research=self.research)
-        self.create_message(prompt=prompt, file_ids=file_ids)
+        self.create_message(prompt=prompt)
         self.create_run()
         #self.add_and_display_message(type="user")
         self.wait_on_run()
