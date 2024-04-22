@@ -12,3 +12,4 @@ langchain-experimental
 langchain-openai
 langchainhub
 espn-api
+nest-asyncio
