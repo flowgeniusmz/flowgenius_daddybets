@@ -109,12 +109,12 @@ class ChatHistory():
                 with body_container:
                     cols = st.columns([10,1,10])
                     with cols[0]:
-                        usermessages = st.popover(label="User Messages", use_container_width=True)
+                        usermessages = st.popover(label="User Messages", use_container_width=True, disabled=False)
                         with usermessages:
                             for msg in user_msgs:
                                 st.markdown(msg)
                     with cols[2]:
-                        asstmessages = st.popover(label="Assistant Messages", use_container_width=True)
+                        asstmessages = st.popover(label="Assistant Messages", use_container_width=True, disabled=False)
                         with asstmessages:
                             for msg in assistant_msgs:
                                 st.markdown(msg)

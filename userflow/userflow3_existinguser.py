@@ -6,7 +6,7 @@ import re
 
 def valid_username(email):
     # Regular expression for validating an Email
-    pattern = r'^[\w\.-]+@[\w\.-]+\.\w{2,3}$'
+    pattern = r'^[\w\.-]+@[\w\.-]+\.\w{2,3}$'       # Regular expression for validating an Email
     if re.match(pattern, email):
         return True
     else:
