@@ -8,3 +8,6 @@ backgroundColor = "#ffffff"
 
 [client]
 showSidebarNavigation = false
+
+[server]
+maxUploadSize=1028
