@@ -85,6 +85,7 @@ def get_draftkings_data():
     DataFileUtilities.write_json_to_file(json_data=json_events_data, type="events")
     events_file_id = DataFileUtilities.create_oai_file(type="events")
     new_file_ids.append(events_file_id)
+    print(new_file_ids)
 
     DataFileUtilities.add_oai_files_to_assistant(file_ids=new_file_ids)
     DataFileUtilities.delete_old_files(file_ids=old_file_ids)
