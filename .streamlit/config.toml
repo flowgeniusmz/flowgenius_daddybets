@@ -5,6 +5,8 @@ secondaryBackgroundColor = "#00B084"
 textColor = "#000000"            
 backgroundColor = "#ffffff"      
 #errorColor = "#FF6B6B"           
+#account
+
 
 [client]
 showSidebarNavigation = false
