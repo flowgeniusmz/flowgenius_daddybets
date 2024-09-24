@@ -61,31 +61,36 @@ def retrieve_stripe_checkout_session(session_id):
 def callback_newuserform(username, credential):
     checkusername = valid_username(email=username)
     if checkusername:
-        asstid, threadid = create_assistant_thread()
-        Client = create_client(supabase_key=st.secrets.supabase.api_key, supabase_url=st.secrets.supabase.url)
-        table = st.secrets.supabase.table_users
-        unamecol = st.secrets.supabase.username_col
-        credcol = st.secrets.supabase.password_col
-        asstidcol = st.secrets.supabase.asstid_col
-        threadidcol = st.secrets.supabase.threadid_col
-        auth_data = {
-            unamecol: username,
-            credcol: credential,
-            asstidcol: asstid,
-            threadidcol: threadid
-        }
         try:
+            asstid, threadid = create_assistant_thread()
+            Client = create_client(supabase_key=st.secrets.supabase.api_key, supabase_url=st.secrets.supabase.url)
+            table = st.secrets.supabase.table_users
+            unamecol = st.secrets.supabase.username_col
+            credcol = st.secrets.supabase.password_col
+            asstidcol = st.secrets.supabase.asstid_col
+            threadidcol = st.secrets.supabase.threadid_col
+            auth_data = {
+                unamecol: username,
+                credcol: credential,
+                asstidcol: asstid,
+                threadidcol: threadid
+            }
             data, _ = (Client.table(table_name=table).insert(json=auth_data).execute())
-        except Exception as e:
-            st.error(body="Unable to create account. Please try again")
-        else:
+
             st.session_state.geolocation_complete = uf4.get_geolocation()
             st.session_state.userflow_complete = True
             st.session_state.checkuser = True
-            #st.session_state.userflow_stage = 4
             st.toast(body="Account successfully created!")
-            send_welcome_email(username = username, credential = credential, name = st.session_state.stripe_customer_name)
+
+            # Ensure stripe_customer_name is set
+            if 'stripe_customer_name' not in st.session_state or not st.session_state.stripe_customer_name:
+                st.session_state.stripe_customer_name = username  # or assign a default value
+
+            send_welcome_email(username=username, credential=credential, name=st.session_state.stripe_customer_name)
             ps.switch_to_homepage()
+        except Exception as e:
+            st.error(body="Unable to create account. Please try again")
+            st.write(f"Exception: {e}")
     else:
         st.error("**Error**: Invalid username - username must be a valid email address. Please update and try again.")
 
