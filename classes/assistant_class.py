@@ -23,7 +23,9 @@ class BettingAssistant():
     def get_assistant(self):
         self.assistant_id = st.secrets.openai.assistantid
         self.assistant = self.client.beta.assistants.retrieve(assistant_id=self.assistant_id)
-    
+        print(self.assistant_id)
+        print(self.assistant)
+        print(self.assistant.instructions)
     def get_thread(self):
         self.thread = self.client.beta.threads.create()
         self.thread_id = self.thread.id
@@ -138,7 +140,7 @@ class BettingAssistant():
         self.add_and_display_message(type="assistant")
 
     def set_completion_attributes(self):
-        self.completion_model = "gpt-3.5-turbo"
+        self.completion_model = "gpt-4o-mini"
         self.completion_temp = 0
         self.completion_json_response_format = {"type": "json_object"}
         self.max_tokens = 1000

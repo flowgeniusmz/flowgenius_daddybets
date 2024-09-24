@@ -7,7 +7,7 @@ from tavily import TavilyClient
 from classes.research_class import ResearchTopic
 
 ### VARIABLES
-model = "gpt-3.5-turbo"
+model = "gpt-4o-mini"
 sysmessages = {"role": "system", "content": "Summarize the information provided to you by the user the the most optimal way to provide to another AI system or assistant. The focus of each summary should contain any relevant information that may impact sports outcomes or sports betting."}
 userprompt = """Query: {query}; Content: {content}; Raw Content: {rawcontent}; URL: {url}; Similarity Score: {score}"""
 topic_names = [ResearchTopic.INJURY_REPORT, ResearchTopic.NEWS, ResearchTopic.HEAD_TO_HEAD_STATISTICS, ResearchTopic.FUTURES_AND_PROP_BETS]

@@ -44,7 +44,7 @@ class Research:
         self.results = []
         self.queries = []
         self.topic_names = [ResearchTopic.INJURY_REPORT, ResearchTopic.NEWS, ResearchTopic.HEAD_TO_HEAD_STATISTICS, ResearchTopic.TEAM_PERFORMANCE_TRENDS, ResearchTopic.SPREADS, ResearchTopic.PREDICTIONS]
-        self.model = "gpt-3.5-turbo"
+        self.model = "gpt-4o-mini"
         self.research = []
         self.summaries = []
         self.user_input = user_input

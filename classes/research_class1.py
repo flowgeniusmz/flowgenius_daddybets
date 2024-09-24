@@ -40,9 +40,9 @@ class Research:
         self.user_input = user_input
         self.tavily_api_key = st.secrets["tavily"]["api_key"]
         self.openai_api_key = st.secrets["openai"]["api_key"]
-        self.model = "gpt-3.5-turbo"
+        self.model = "gpt-4o-mini"
         self.system_message = {"role": "system", "content": "Summarize the information provided to you by the user the most optimal way to provide to another AI system or assistant. The focus of each summary should contain any relevant information that may impact sports outcomes or sports betting."}
-        self.topic_names = [ResearchTopic.INJURY_REPORT, ResearchTopic.NEWS, ResearchTopic.HEAD_TO_HEAD_STATISTICS, ResearchTopic.TEAM_PERFORMANCE_TRENDS, ResearchTopic.SPREADS, ResearchTopic.PREDICTIONS]
+        self.topic_names = [ResearchTopic.INJURY_REPORT, ResearchTopic.NEWS, ResearchTopic.HEAD_TO_HEAD_STATISTICS, ResearchTopic.TEAM_PERFORMANCE_TRENDS, ResearchTopic.SPREADS, ResearchTopic.PREDICTIONS, ResearchTopic.WEATHER_CONDITIONS, ResearchTopic.SHARP_MONEY_INDICATORS, ResearchTopic.ROSTERS]
 
     def get_queries(self):
         queries = [topic.value[1] for topic in self.topic_names]  # Adjusted to access tuple correctly

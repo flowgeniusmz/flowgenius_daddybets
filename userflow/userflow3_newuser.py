@@ -5,6 +5,13 @@ from supabase import create_client, Client
 from config import pagesetup as ps
 from userflow import userflow4_usersession as uf4
 import re
+from openai import OpenAI
+
+def create_assistant_thread():
+    client = OpenAI(api_key=st.secrets.openai.api_key)
+    asstid = client.beta.assistants.create(model="gpt-4o-2024-08-06", description="DaddyBets User Assistant", instructions=st.secrets.openai.instructions, tools=[{"type": "code_interpreter"}, {"type": "file_search"}, {"type": "function", "function": {"name": "internet_search","description": "Get information on recent events from the web.","parameters": {"type": "object","properties": {"query": {"type": "string","description": "The search query to use. For example: 'Injury report for the Chargers Chiefs game'"}},"required": ["query"]}}}]).id
+    threadid = client.beta.threads.create().id
+    return asstid, threadid
 
 def valid_username(email):
     # Regular expression for validating an Email
@@ -54,13 +61,18 @@ def retrieve_stripe_checkout_session(session_id):
 def callback_newuserform(username, credential):
     checkusername = valid_username(email=username)
     if checkusername:
+        asstid, threadid = create_assistant_thread()
         Client = create_client(supabase_key=st.secrets.supabase.api_key, supabase_url=st.secrets.supabase.url)
         table = st.secrets.supabase.table_users
         unamecol = st.secrets.supabase.username_col
         credcol = st.secrets.supabase.password_col
+        asstidcol = st.secrets.supabase.asstid_col
+        threadidcol = st.secrets.supabase.threadid_col
         auth_data = {
             unamecol: username,
-            credcol: credential
+            credcol: credential,
+            asstidcol: asstid,
+            threadidcol: threadid
         }
         try:
             data, _ = (Client.table(table_name=table).insert(json=auth_data).execute())
