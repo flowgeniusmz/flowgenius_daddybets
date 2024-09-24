@@ -9,7 +9,7 @@ from openai import OpenAI
 
 def create_assistant_thread():
     client = OpenAI(api_key=st.secrets.openai.api_key)
-    asstid = client.beta.assistants.create(model="gpt-4o-2024-08-06", description="DaddyBets User Assistant", instructions=st.secrets.openai.instructions, tools=[{"type": "code_interpreter"}, {"type": "file_search"}, {"type": "function", "function": {"name": "internet_search","description": "Get information on recent events from the web.","parameters": {"type": "object","properties": {"query": {"type": "string","description": "The search query to use. For example: 'Injury report for the Chargers Chiefs game'"}},"required": ["query"]}}}]).id
+    asstid = client.beta.assistants.create(name="DaddyBets User Assistant", model="gpt-4o-2024-08-06", description="DaddyBets User Assistant", instructions=st.secrets.openai.instructions, tools=[{"type": "code_interpreter"}, {"type": "file_search"}, {"type": "function", "function": {"name": "internet_search","description": "Get information on recent events from the web.","parameters": {"type": "object","properties": {"query": {"type": "string","description": "The search query to use. For example: 'Injury report for the Chargers Chiefs game'"}},"required": ["query"]}}}]).id
     threadid = client.beta.threads.create().id
     return asstid, threadid
 
